@@ -23,7 +23,7 @@
         <article class="proj {{ if eq $i 0 }}is-active{{ end }}" id="proj-{{ $p.File.ContentBaseName }}">
           <div class="proj__meta">{{ delimit ($p.Params.tags | default (slice "project")) " · " }}</div>
           <h2 class="proj__title">{{ $p.Title }}</h2>
-          <p class="proj__desc">{{ $p.Summary }}</p>
+          <p class="proj__desc">{{ $p.Params.description }}</p>
           <div class="proj__tags">{{ range $p.Params.tags }}<span class="tag">{{ . }}</span>{{ end }}</div>
           <div class="proj__links">
             <a href="{{ $p.RelPermalink }}" class="btn btn--primary">Read more</a>
