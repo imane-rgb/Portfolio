@@ -29,7 +29,7 @@ pygmentsCodeFences = true
     github   = "https://github.com/imane-ibnelhabib"
     linkedin = "https://www.linkedin.com/in/imane-ibnelhabib-55a821388"
     email    = "ibnelhabibimane@gmail.com"
-    cv       = "/Portfolio/cv/"
+    cv       = "/cv/"
 
 [menu]
   [[menu.main]]
