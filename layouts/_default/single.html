@@ -7,7 +7,7 @@
     <!-- Breadcrumb -->
     <p style="font-size:0.72rem; color:var(--fg-4); margin-bottom:2rem;">
       <a href="/" style="color:var(--fg-4);">~</a> /
-      <a href="/{{ .Section }}/" style="color:var(--fg-4);">{{ .Section }}</a> /
+      <a href="{{ .Section | relURL }}/" style="color:var(--fg-4);">{{ .Section }}</a> /
       <span style="color:var(--fg-3);">{{ .File.ContentBaseName }}</span>
     </p>
 
