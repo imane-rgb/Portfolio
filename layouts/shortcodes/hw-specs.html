@@ -1,0 +1,13 @@
+{{/* {{< hw-specs >}} Key | Value \n ... {{< /hw-specs >}} */}}
+<aside class="hw-specs" aria-label="Hardware specifications">
+  <div class="hw-specs__head">System Requirements</div>
+  {{ range (split (trim .Inner "\n") "\n") }}
+    {{ $p := split . "|" }}
+    {{ if ge (len $p) 2 }}
+    <div class="hw-specs__row">
+      <span class="hw-specs__key">{{ index $p 0 | trim " " }}</span>
+      <span class="hw-specs__val">{{ index $p 1 | trim " " }}</span>
+    </div>
+    {{ end }}
+  {{ end }}
+</aside>

@@ -1,0 +1,54 @@
+{{ define "main" }}
+<div style="padding-top:52px;">
+<section class="section">
+  <div class="container">
+    <p class="section__label">{{ .Title | lower }}</p>
+
+    {{ if eq .Section "projects" }}
+    <div class="explorer">
+      <aside class="explorer__tree" aria-label="Project list">
+        <div class="tree__header">Explorer</div>
+        {{ range $i, $p := .Pages }}
+        <div class="tree__item {{ if eq $i 0 }}is-active{{ end }}"
+             data-target="proj-{{ $p.File.ContentBaseName }}"
+             role="button" tabindex="0">
+          <span class="tree__icon">{{ with $p.Params.icon }}{{ . }}{{ else }}📄{{ end }}</span>
+          {{ $p.File.ContentBaseName }}.{{ $p.Params.filetype | default "md" }}
+          {{ with $p.Params.tags }}<span class="tree__ext">{{ index . 0 }}</span>{{ end }}
+        </div>
+        {{ end }}
+      </aside>
+      <div class="explorer__pane" aria-live="polite">
+        {{ range $i, $p := .Pages }}
+        <article class="proj {{ if eq $i 0 }}is-active{{ end }}" id="proj-{{ $p.File.ContentBaseName }}">
+          <div class="proj__meta">{{ delimit ($p.Params.tags | default (slice "project")) " · " }}</div>
+          <h2 class="proj__title">{{ $p.Title }}</h2>
+          <p class="proj__desc">{{ $p.Summary }}</p>
+          <div class="proj__tags">{{ range $p.Params.tags }}<span class="tag">{{ . }}</span>{{ end }}</div>
+          <div class="proj__links">
+            <a href="{{ $p.RelPermalink }}" class="btn btn--primary">Read more</a>
+            {{ with $p.Params.github }}<a href="{{ . }}" class="btn" target="_blank" rel="noopener">GitHub ↗</a>{{ end }}
+          </div>
+        </article>
+        {{ end }}
+      </div>
+    </div>
+
+    {{ else }}
+    <div class="entry-list">
+      {{ range .Pages }}
+      <div class="entry">
+        <span class="entry__date">{{ .Date.Format "2006-01-02" }}</span>
+        <div>
+          <div class="entry__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+          <div class="entry__tags">{{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}</div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+
+  </div>
+</section>
+</div>
+{{ end }}

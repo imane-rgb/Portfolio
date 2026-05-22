@@ -1,0 +1,230 @@
+{{ define "main" }}
+
+{{/* ── HERO ── */}}
+<section class="hero" id="hero">
+  <div class="container hero__inner">
+
+    <p class="hero__kicker">
+      <span class="hero__kicker-dot" aria-hidden="true"></span>
+      INPT Rabat &nbsp;·&nbsp; SESNum — Rabat, Maroc
+    </p>
+
+    <h1 class="hero__name"><span>Imane<br>Ibnelhabib</span></h1>
+
+    <p class="hero__role">
+      Étudiante ingénieure systèmes embarqués &amp; services numériques.
+      IoT, cloud, systèmes distribués — du capteur au dashboard.
+    </p>
+
+    <div class="hero__actions">
+      <a href="/projects/" class="btn btn--primary">View projects</a>
+      <a href="{{ .Site.Params.social.linkedin }}" class="btn btn--linkedin" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="{{ .Site.Params.social.cv }}" class="btn btn--cv" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Voir CV
+      </a>
+      <a href="mailto:{{ .Site.Params.social.email }}" class="btn">Contact</a>
+    </div>
+
+  </div>
+</section>
+
+{{/* ── ABOUT ── */}}
+<section class="section" id="about">
+  <div class="container">
+    <p class="section__label reveal">about</p>
+
+    <div class="terminal reveal reveal-delay-1" style="max-width:640px;" role="region" aria-label="About terminal">
+      <div class="terminal__bar">
+        <span class="dot dot--red"></span>
+        <span class="dot dot--yellow"></span>
+        <span class="dot dot--green"></span>
+        <span class="terminal__title">{{ .Site.Params.terminal.user }}@{{ .Site.Params.terminal.host }} — bash</span>
+      </div>
+      <div class="terminal__body">
+        <div class="t-line">
+          <span class="t-prompt">{{ .Site.Params.terminal.user }}@{{ .Site.Params.terminal.host }}:~$</span>
+          <span class="t-cmd">cat profile.json</span>
+        </div>
+        <div style="margin:0.6rem 0 0.2rem;color:var(--fg-4);">{</div>
+        <div style="padding-left:1.5rem;">
+          <div class="t-line"><span class="t-key">"name"</span><span class="t-punct">:</span>&nbsp;<span class="t-str">"Imane Ibnelhabib"</span><span class="t-punct">,</span></div>
+          <div class="t-line"><span class="t-key">"formation"</span><span class="t-punct">:</span>&nbsp;<span class="t-str">"INPT Rabat — SESNum (2025–2028)"</span><span class="t-punct">,</span></div>
+          <div class="t-line"><span class="t-key">"cpge"</span><span class="t-punct">:</span>&nbsp;<span class="t-str">"PCSI → PSI (2023–2025)"</span><span class="t-punct">,</span></div>
+          <div class="t-line"><span class="t-key">"focus"</span><span class="t-punct">:</span>&nbsp;<span class="t-punct">[</span><span class="t-str">"IoT"</span><span class="t-punct">,</span> <span class="t-str">"Cloud"</span><span class="t-punct">,</span> <span class="t-str">"AI"</span><span class="t-punct">,</span> <span class="t-str">"Data"</span><span class="t-punct">,</span> <span class="t-str">"VHDL"</span><span class="t-punct"></span>],</span></div>
+          <div class="t-line"><span class="t-key">"langues"</span><span class="t-punct">:</span>&nbsp;<span class="t-punct">[</span><span class="t-str">"Français C1"</span><span class="t-punct">,</span> <span class="t-str">"Anglais C1"</span><span class="t-punct">,</span> <span class="t-str">"Arabe"</span><span class="t-punct">],</span></div>
+          <div class="t-line"><span class="t-key">"contact"</span><span class="t-punct">:</span>&nbsp;<span class="t-str">"ibnelhabibimane@gmail.com"</span><span class="t-punct">,</span></div>
+          
+        </div>
+        <div style="color:var(--fg-4);">}</div>
+        <div class="t-line" style="margin-top:1rem;">
+          <span class="t-prompt">{{ .Site.Params.terminal.user }}@{{ .Site.Params.terminal.host }}:~$</span>
+          <span class="t-cursor"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* ── SKILLS ── */}}
+<section class="section" id="skills">
+  <div class="container">
+    <p class="section__label reveal">skills</p>
+    <div class="skills reveal reveal-delay-1">
+      <div class="skill-group">
+        <div class="skill-group__name">Langages</div>
+        <div class="skill-group__list">
+          <span class="skill-item">C / C++</span>
+          <span class="skill-item">Python</span>
+          <span class="skill-item">SQL</span>
+          <span class="skill-item">JavaScript</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group__name">Embarqué</div>
+        <div class="skill-group__list">
+          <span class="skill-item">ESP32 / Arduino</span>
+          <span class="skill-item">Capteurs & Actionneurs</span>
+          <span class="skill-item">Traitement d'images</span>
+          <span class="skill-item">YOLOv8</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group__name">Bases de données</div>
+        <div class="skill-group__list">
+          <span class="skill-item">SQL Server</span>
+          <span class="skill-item">PostgreSQL</span>
+          <span class="skill-item">Modélisation ERD</span>
+          <span class="skill-item">T-SQL / RBAC</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group__name">Outils</div>
+        <div class="skill-group__list">
+          <span class="skill-item">Linux / Git</span>
+          <span class="skill-item">Flask / Blynk</span>
+          <span class="skill-item">LaTeX</span>
+          <span class="skill-item">Raspberry Pi</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* ── PROJECTS ── */}}
+<section class="section" id="projects">
+  <div class="container">
+    <p class="section__label reveal">projects</p>
+    <div class="explorer reveal reveal-delay-1">
+      <aside class="explorer__tree" aria-label="Project list">
+        <div class="tree__header">Explorer</div>
+        <div class="tree__item is-active" data-target="proj-almidan" role="button" tabindex="0">
+          <span class="tree__icon">📱</span>al-midan.dart<span class="tree__ext">mobile</span>
+        </div>
+        <div class="tree__item" data-target="proj-tourism" role="button" tabindex="0">
+          <span class="tree__icon">🗺️</span>smart-tourism.py<span class="tree__ext">iot</span>
+        </div>
+        <div class="tree__item" data-target="proj-access" role="button" tabindex="0">
+          <span class="tree__icon">🔐</span>ai-access.py<span class="tree__ext">ai</span>
+        </div>
+        <div class="tree__item" data-target="proj-insulin" role="button" tabindex="0">
+          <span class="tree__icon">🧊</span>smart-insulin.c<span class="tree__ext">iot</span>
+        </div>
+        <div class="tree__item" data-target="proj-orion" role="button" tabindex="0">
+          <span class="tree__icon">🛰️</span>orion-7.sql<span class="tree__ext">db</span>
+        </div>
+      </aside>
+      <div class="explorer__pane" aria-live="polite">
+        <article class="proj is-active" id="proj-almidan">
+          <div class="proj__meta">dart · flutter · mobile</div>
+          <h2 class="proj__title">Al-Midan</h2>
+          <p class="proj__desc">Mobile application for coordinating team sports among Moroccan university students. Real-time match scheduling, campus field maps, and live player counts via Firestore.</p>
+          <div class="proj__tags">
+            <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Firebase</span><span class="tag">Riverpod</span><span class="tag">Android / iOS</span>
+          </div>
+          <div class="proj__links">
+            <a href="/projects/al-midan/" class="btn btn--primary">Read more</a>
+            <a href="{{ $.Site.Params.social.github }}" class="btn" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+        <article class="proj" id="proj-tourism">
+          <div class="proj__meta">python · iot · web · real-time</div>
+          <h2 class="proj__title">Smart Tourism Platform</h2>
+          <p class="proj__desc">IoT-driven tourism and reservation platform with real-time crowd density, AQI, and micro-climate telemetry. Intelligent booking engine with live capacity thresholds, smart parking nodes, and a centralized web dashboard.</p>
+          <div class="proj__tags">
+            <span class="tag">IoT</span><span class="tag">Python</span><span class="tag">MQTT</span><span class="tag">Real-Time</span><span class="tag">Full-Stack</span><span class="tag">Web</span>
+          </div>
+          <div class="proj__links">
+            <a href="/projects/smart-tourism/" class="btn btn--primary">Read more</a>
+            <a href="{{ $.Site.Params.social.github }}" class="btn" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+        <article class="proj" id="proj-access">
+          <div class="proj__meta">ai · computer vision · iot · esp32</div>
+          <h2 class="proj__title">AI Access Control System</h2>
+          <p class="proj__desc">Smart IoT access control powered by YOLOv8 facial recognition and deep learning embeddings. ESP32-CAM streams to a Flask server for real-time identity verification, with relay-controlled door lock and a live security dashboard.</p>
+          <div class="proj__tags">
+            <span class="tag">AI</span><span class="tag">YOLOv8</span><span class="tag">ESP32</span><span class="tag">Flask</span><span class="tag">Computer Vision</span><span class="tag">IoT</span>
+          </div>
+          <div class="proj__links">
+            <a href="/projects/ai-access-control/" class="btn btn--primary">Read more</a>
+            <a href="{{ $.Site.Params.social.github }}" class="btn" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+        <article class="proj" id="proj-insulin">
+          <div class="proj__meta">c · esp32 · iot · medical</div>
+          <h2 class="proj__title">Smart Insulin Preservation System</h2>
+          <p class="proj__desc">Autonomous medical-grade IoT system maintaining insulin at 2–8°C using a closed-loop PID algorithm on ESP32 with DS18B20 thermal sensing. Achieves full stabilization at 5°C in under 7 minutes, with Blynk cloud dashboard and Python behavioral simulation.</p>
+          <div class="proj__tags">
+            <span class="tag">IoT</span><span class="tag">ESP32</span><span class="tag">Embedded C</span><span class="tag">Python</span><span class="tag">Blynk</span><span class="tag">Medical</span>
+          </div>
+          <div class="proj__links">
+            <a href="/projects/smart-insulin/" class="btn btn--primary">Read more</a>
+            <a href="{{ $.Site.Params.social.github }}" class="btn" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+        <article class="proj" id="proj-orion">
+          <div class="proj__meta">sql · distributed · rbac · raspberry pi</div>
+          <h2 class="proj__title">ORION-7: Space Logistics Database</h2>
+          <p class="proj__desc">Enterprise-grade distributed relational database for interplanetary logistics. Full 1NF–3NF normalization, T-SQL stored procedures and triggers, RBAC permission framework, deployed as a high-availability cluster across Linux Raspberry Pi nodes.</p>
+          <div class="proj__tags">
+            <span class="tag">SQL Server</span><span class="tag">T-SQL</span><span class="tag">RBAC</span><span class="tag">Raspberry Pi</span><span class="tag">Distributed</span><span class="tag">Linux</span>
+          </div>
+          <div class="proj__links">
+            <a href="/projects/orion-7/" class="btn btn--primary">Read more</a>
+            <a href="{{ $.Site.Params.social.github }}" class="btn" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* ── OFF-DUTY ── */}}
+<section class="section" id="off-duty">
+  <div class="container">
+    <p class="section__label reveal">off_duty</p>
+    <div class="interests reveal reveal-delay-1">
+      <div class="interest">
+        <div class="interest__icon">🎨</div>
+        <div class="interest__name">Creative Design</div>
+        <div class="interest__desc">Drawing and illustration — the core inspiration behind my web design. Transforming sketching into intuitive user interfaces.</div>
+      </div>
+      <div class="interest">
+        <div class="interest__icon">💻</div>
+        <div class="interest__name">Software &amp; Data</div>
+        <div class="interest__desc">Merging coding with the math of data and machine learning. Driven by a passion to build cleaner, more scalable software.</div>
+      </div>
+      <div class="interest">
+        <div class="interest__icon">📚</div>
+        <div class="interest__name">Avid Reading</div>
+        <div class="interest__desc">Getting lost in books of all kinds. An endless curiosity to explore new perspectives, learn broadly, and build a sharper mind.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

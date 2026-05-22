@@ -1,0 +1,18 @@
+{{/* {{< iot-widget title="Node #1" >}} Key | Value \n ... {{< /iot-widget >}} */}}
+{{ $title := .Get "title" | default "Hardware Status" }}
+
+<div class="iot-widget" role="region" aria-label="{{ $title }}">
+  <div class="iot-widget__head">
+    <span class="iot-widget__pulse" aria-hidden="true"></span>
+    {{ $title }}
+  </div>
+  {{ range (split (trim .Inner "\n") "\n") }}
+    {{ $p := split . "|" }}
+    {{ if ge (len $p) 2 }}
+    <div class="iot-widget__row">
+      <span>{{ index $p 0 | trim " " }}</span>
+      <span>{{ index $p 1 | trim " " }}</span>
+    </div>
+    {{ end }}
+  {{ end }}
+</div>

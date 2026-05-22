@@ -1,0 +1,60 @@
+{{ define "main" }}
+<div style="padding-top: 52px;">
+<section class="section">
+  <div class="container">
+    <div class="section__inner">
+
+    <!-- Breadcrumb -->
+    <p style="font-size:0.72rem; color:var(--fg-4); margin-bottom:2rem;">
+      <a href="/" style="color:var(--fg-4);">~</a> /
+      <a href="/{{ .Section }}/" style="color:var(--fg-4);">{{ .Section }}</a> /
+      <span style="color:var(--fg-3);">{{ .File.ContentBaseName }}</span>
+    </p>
+
+    {{ if eq .Section "projects" }}
+
+    <div class="project-layout">
+      <article>
+        <div style="font-size:0.72rem; color:var(--fg-4); margin-bottom:0.75rem; letter-spacing:0.04em;">
+          {{ delimit (.Params.tags | default (slice "project")) " · " }}
+        </div>
+        <h1 style="font-size:1.8rem; font-weight:700; letter-spacing:-0.02em; color:var(--fg); margin-bottom:1rem;">
+          {{ .Title }}
+        </h1>
+        <div class="proj__tags" style="margin-bottom:2rem;">
+          {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}
+        </div>
+        <div class="prose">{{ .Content }}</div>
+      </article>
+
+      {{ with .Params.hw_specs }}
+      <aside class="hw-specs">
+        <div class="hw-specs__head">System Requirements</div>
+        {{ range . }}
+        <div class="hw-specs__row">
+          <span class="hw-specs__key">{{ .key }}</span>
+          <span class="hw-specs__val">{{ .value }}</span>
+        </div>
+        {{ end }}
+      </aside>
+      {{ end }}
+    </div>
+
+    {{ else }}
+
+    <h1 style="font-size:1.4rem; font-weight:700; letter-spacing:-0.02em; color:var(--fg); margin-bottom:0.5rem;">
+      {{ .Title }}
+    </h1>
+    <p style="font-size:0.72rem; color:var(--fg-4); margin-bottom:2.5rem;">
+      {{ .Date.Format "2006-01-02" }}
+      {{ with .Params.tags }} · {{ delimit . " · " }}{{ end }}
+    </p>
+    <div class="prose" style="max-width:680px;">{{ .Content }}</div>
+
+    {{ end }}
+
+  </div><!-- /section__inner -->
+  </div>
+</section>
+</div>
+{{ end }}

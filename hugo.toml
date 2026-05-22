@@ -1,0 +1,43 @@
+baseURL       = "https://imane-ibnelhabib.dev/"
+locale        = "en-us"
+title         = "Imane Ibnelhabib"
+enableRobotsTXT = true
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+
+[markup]
+  [markup.highlight]
+    style       = "dracula"
+    lineNos     = false
+    codeFences  = true
+    guessSyntax = true
+    tabWidth    = 4
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[params]
+  author      = "Imane Ibnelhabib"
+  institution = "INPT Rabat — Systèmes Embarqués & Services Numériques"
+  description = "Étudiante ingénieure systèmes embarqués, IoT, cloud et systèmes distribués."
+  avatar      = "/img/avatar.png"
+
+  [params.terminal]
+    user = "imane"
+    host = "inpt"
+
+  [params.social]
+    github   = "https://github.com/imane-ibnelhabib"
+    linkedin = "https://www.linkedin.com/in/imane-ibnelhabib-55a821388"
+    email    = "ibnelhabibimane@gmail.com"
+    cv       = "/cv/"
+
+[menu]
+  [[menu.main]]
+    name   = "projects"
+    url    = "/projects/"
+    weight = 1
+
+[outputs]
+  home    = ["HTML"]
+  section = ["HTML"]
+  page    = ["HTML"]

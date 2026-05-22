@@ -1,0 +1,16 @@
+{{/* {{< codeblock lang="c" filename="main.c" >}} code {{< /codeblock >}} */}}
+{{ $lang     := .Get "lang"     | default "text" }}
+{{ $filename := .Get "filename" | default "" }}
+
+<div class="codeblock">
+  <div class="codeblock__bar">
+    <span class="dot dot--red"></span>
+    <span class="dot dot--yellow"></span>
+    <span class="dot dot--green"></span>
+    {{ if $filename }}<span class="codeblock__filename">{{ $filename }}</span>{{ end }}
+    <button class="codeblock__copy" type="button" aria-label="Copy code">copy</button>
+  </div>
+  <div class="codeblock__body">
+    {{ highlight (trim .Inner "\n") $lang "" }}
+  </div>
+</div>
